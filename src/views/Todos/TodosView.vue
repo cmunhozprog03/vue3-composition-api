@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>Lista de Tarefas</h1>
+    <h1>
+      Lista de Tarefas
+      <router-link :to="{name: 'todos.create'}">+</router-link>
+    </h1>
     <div v-if="loading">
       Carregando as tarefas...
     </div>
@@ -17,6 +20,7 @@
 
 import TodoService  from '@/services/todos.service'
 import { onMounted, ref } from 'vue'
+
 
 export default {
   name: 'TodosView',
